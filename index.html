@@ -71,14 +71,17 @@
 
             $.get(url, function (info) {
                 console.log(info);
+                //console.log(info.name);
                 //console.log(info.weather[0].description);
 
                 $("#datos").append(`<h2>${city}: ${info.weather[0].description}</h2> 
-
-                                    <h2>Temperatura: ${info.main.temp} °C</h2> 
-
-                                    <h2>Coord: ${info.coord.lat}, ${info.coord.lon} </h2>`);
-
+                                    <h2>Temperatura: ${info.main.temp} °C</h2>
+                                    <h2>Temp. Máxima: ${info.main.temp_max} °C</h2>
+                                    <h2>Temp. Minima: ${info.main.temp_min} °C</h2> 
+                                    <h2>Húmedad: ${info.main.humidity} </h2> 
+                                    <h2>Coord: ${info.coord.lat}, ${info.coord.lon} </h2>` );
+               
+                
 
             }, "json");
 
